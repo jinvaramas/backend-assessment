@@ -1,0 +1,43 @@
+### Get all products
+GET http://localhost:3000/products
+
+### Filter by name
+GET http://localhost:3000/products?name=guitar
+
+### Sort by price
+GET http://localhost:3000/products?sort=price
+
+### Get single product
+GET http://localhost:3000/products/1
+
+### Add new product
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "name": "Keyboard",
+  "price": 1999,
+  "quantity": 2
+}
+
+### Update product
+PATCH http://localhost:3000/products/1
+Content-Type: application/json
+
+{
+  "price": 3999
+}
+
+### Delete product
+DELETE http://localhost:3000/products/1
+
+### Test 404
+GET http://localhost:3000/products/999
+
+### Test 400 (missing required fields)
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "name": "No Price Item"
+}
